@@ -20,7 +20,28 @@ Files
 
     files = glob.glob("./*")
 
-    # とりあえず一覧します
+    # 一覧します
+    for file in files:
+        basename = os.path.basename(file)
+        print(basename)
+
+    return files
+
+
+def list_directory_files(dir_path):
+    """指定のディレクトリーのファイルを一覧します"""
+    if not(dir_path.endswith("/") or dir_path.endswith("\\")):
+        dir_path += os.path.sep
+
+    print(f"Destination directory: {dir_path}")
+
+    print(f"""
+Destination Files
+-----------------""")
+
+    files = glob.glob(f"{dir_path}*")
+
+    # 一覧します
     for file in files:
         basename = os.path.basename(file)
         print(basename)

@@ -1,7 +1,7 @@
 import os
 import sys
 from fs_operation import input_y, input_change_current_directory, \
-    list_current_directory_files
+    list_current_directory_files, list_directory_files
 from this_operation import input_re_pattern, list_can_move_files, move_files
 
 # 日本のWindows は "cp932" なので、Unicodeに変換
@@ -34,7 +34,8 @@ while True:
 Example: ./example
 """)
 
-    print(f"Destination directory: {dest_dir}")
+    # その ディレクトリーのファイルを一覧します
+    files = list_directory_files(dest_dir)
 
     # このディレクトリーで合っていますか？
     is_y = input_y("""
