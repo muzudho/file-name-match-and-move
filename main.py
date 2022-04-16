@@ -20,15 +20,30 @@ Example: .
     files = list_current_directory_files()
 
     # このディレクトリーで合っていますか？
-    is_right_directory = input_y("""
+    is_y = input_y("""
 Are you sure this is the right directory (y/n)?""")
 
-    if is_right_directory:
+    if is_y:
         break
     else:
         print("Canceld")
 
 # 移動先ディレクトリー選択
+while True:
+    dest_dir = input("""Which destination directory?
+Example: ./example
+""")
+
+    print(f"Destination directory: {dest_dir}")
+
+    # このディレクトリーで合っていますか？
+    is_y = input_y("""
+Are you sure this is the right directory (y/n)?""")
+
+    if is_y:
+        break
+    else:
+        print("Canceld")
 
 # 正規表現のパターンを入力してください
 while True:

@@ -34,4 +34,4 @@ def input_y(prompt_message):
 
     answer = input()
 
-    return answer.upper == "Y"
+    return answer.upper() == "Y"
