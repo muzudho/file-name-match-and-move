@@ -2,7 +2,7 @@ import os
 import sys
 from fs_operation import input_y, input_change_current_directory, \
     list_current_directory_files
-from this_operation import input_re_pattern, list_name_matched_files
+from this_operation import input_re_pattern, list_can_move_files
 
 # 日本のWindows は "cp932" なので、Unicodeに変換
 sys.stdout.reconfigure(encoding='utf-8')
@@ -52,8 +52,8 @@ while True:
 Please enter a regular expression pattern.
 Example: ^\d{6}__.*__\d{2}-?[^\.]*.txt$""")
 
-    # パターンに一致したファイル名の一覧
-    list_name_matched_files(files, pattern)
+    # パターンに一致し、移動も可能なファイル名の一覧
+    list_can_move_files(files, pattern, dest_dir)
 
     # マッチしましたか？
     is_match = input_y("""

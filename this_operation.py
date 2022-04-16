@@ -1,6 +1,7 @@
 import os
 import re
 
+
 def input_re_pattern(prompt_message):
     """ファイル名パターンの入力"""
     print(prompt_message)
@@ -15,19 +16,23 @@ Numbering
 
     return pattern
 
-def list_name_matched_files(files, pattern):
-    """パターンに一致したファイル名の一覧"""
+
+def list_can_move_files(files, pattern, dest_dir):
+    """TODO パターンに一致し、移動も可能なファイル名の一覧"""
     for i, file in enumerate(files):
         basename = os.path.basename(file)
         result = pattern.match(basename)
         if result:
             # Matched
-            # グループ数
-            groupCount = len(result.groups())
-            buf = f"({i+1}) {basename}"
-            for j in range(0, groupCount):
-                buf += f" \\{j+1}=[{result.group(j+1)}]"
-            print(buf)
+
+            dest_file = os.path.join(dest_dir, basename)
+            if os.path.exists(dest_file):
+                # ファイルが既存
+                print(f"( ) {basename} ready exists")
+                continue
+
+            # ファイルを移動可能
+            print(f"({i+1}) {basename} ----> {dest_file}")
         else:
             # Unmatched
             print(f"( ) {basename}")
