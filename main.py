@@ -2,7 +2,7 @@ import os
 import sys
 from fs_operation import input_y, input_change_current_directory, \
     list_current_directory_files
-from this_operation import input_re_pattern, list_can_move_files
+from this_operation import input_re_pattern, list_can_move_files, move_files
 
 # 日本のWindows は "cp932" なので、Unicodeに変換
 sys.stdout.reconfigure(encoding='utf-8')
@@ -63,3 +63,14 @@ Was there a match (y/n)?""")
         break
     else:
         print("Canceld")
+
+# 実行しますか？ (y/n)
+is_yes = input_y("""
+Do you want to run it (y/n)?
+""")
+
+if is_yes:
+    move_files(files, pattern, dest_dir)
+else:
+    print("Canceld")
+    exit()
