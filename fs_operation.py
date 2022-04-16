@@ -6,9 +6,7 @@ import glob
 
 def input_change_current_directory(prompt_message):
     """カレント ディレクトリーを替えます"""
-    print(prompt_message)
-
-    path = input()
+    path = input(prompt_message)
 
     # カレントディレクトリを移動
     os.chdir(path)

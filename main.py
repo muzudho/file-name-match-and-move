@@ -11,7 +11,8 @@ sys.stdout.reconfigure(encoding='utf-8')
 while True:
     # どのディレクトリーですか？
     input_change_current_directory("""Which directory?
-Example: .""")
+Example: .
+""")
 
     print(f"Current directory: {os.getcwd()}")
 
@@ -26,6 +27,8 @@ Are you sure this is the right directory (y/n)?""")
         break
     else:
         print("Canceld")
+
+# 移動先ディレクトリー選択
 
 # 正規表現のパターンを入力してください
 while True:
