@@ -35,7 +35,7 @@ Example: ./example
 """)
 
     # その ディレクトリーのファイルを一覧します
-    files = list_directory_files(dest_dir)
+    _dest_files = list_directory_files(dest_dir)
 
     # このディレクトリーで合っていますか？
     is_y = input_y("""

@@ -30,14 +30,14 @@ Numbering
             dest_file = os.path.join(dest_dir, basename)
             if os.path.exists(dest_file):
                 # ファイルが既存
-                print(f"( ) {dest_file} ready exists")
+                print(f"( ) {file} ----> {dest_file} ready exists")
                 continue
 
             # ファイルを移動可能
-            print(f"({i+1}) {basename} ----> {dest_file}")
+            print(f"({i+1}) {file} ----> {dest_file}")
         else:
             # Unmatched
-            print(f"( ) {basename}")
+            print(f"( ) {file}")
 
 
 def move_files(files, pattern, dest_dir):
