@@ -18,8 +18,8 @@ def list_can_move_files(files, pattern, dest_dir):
     """パターンに一致し、移動も可能なファイル名の一覧"""
 
     print("""
-Numbering
----------""")
+Simulation
+----------""")
 
     for i, file in enumerate(files):
         basename = os.path.basename(file)

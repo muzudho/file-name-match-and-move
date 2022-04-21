@@ -48,6 +48,7 @@ Are you sure this is the right directory (y/n)?""")
 
 is_dirty_files = False
 
+# 正規表現のパターンを入力してください
 while True:
 
     if is_dirty_files:
@@ -55,25 +56,13 @@ while True:
 
     is_dirty_files = True
 
-    # 正規表現のパターンを入力してください
-    while True:
-
-        # ファイル名パターンの入力
-        pattern = input_re_pattern(r"""
+    # ファイル名パターンの入力
+    pattern = input_re_pattern(r"""
 Please enter a regular expression pattern.
 Example: ^\d{6}__.*__\d{2}-?[^\.]*.txt$""")
 
-        # パターンに一致し、移動も可能なファイル名の一覧
-        list_can_move_files(files, pattern, dest_dir)
-
-        # マッチしましたか？
-        is_match = input_y("""
-Was there a match (y/n)?""")
-
-        if is_match:
-            break
-        else:
-            print("Canceld")
+    # パターンに一致し、移動も可能なファイル名の一覧
+    list_can_move_files(files, pattern, dest_dir)
 
     # 実行しますか？ (y/n)
     is_yes = input_y("""
